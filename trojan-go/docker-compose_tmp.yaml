@@ -1,0 +1,28 @@
+version: '3.9'
+
+x-default:
+  &defaults
+  restart: always
+  logging:
+    options:
+      max-size: '1m'
+      max-file: '1'
+    driver: json-file
+
+services:
+  caddy:
+    <<: *defaults
+    image: endoffight/caddy2-with-cloudflare:latest
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./data/caddy/FileStorage:/root/.local/share/caddy
+    environment:
+      ACME_AGREE: "true"
+    ports:
+      - "443:443"
+      - "80:80"
+    networks:
+      - web
+
+networks:
+  web:

@@ -1,0 +1,12 @@
+https://you.domain.com {
+        log
+        tls {
+                dns cloudflare your token
+        }
+        respond "Goodbye, world!"
+}
+
+http://you.domain.com {
+        log
+        respond "Goodbye, world!"
+}
