@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  mihoyo-bbs:
+    image: endoffight/genshin
+    restart: always
+    volumes:
+      - ./config:/data/AutoMihoyoBBS/config
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "1m"
