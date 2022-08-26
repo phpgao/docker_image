@@ -1,6 +1,6 @@
 FROM alpine:3
 
-LABEL maintainer="phpgao"
+LABEL maintainer="endoffight@gmail.com"
 
 COPY docker-entrypoint.sh /opt/docker-entrypoint.sh
 
