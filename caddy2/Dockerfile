@@ -1,4 +1,4 @@
-FROM golang:1.18-alpine AS builder
+FROM golang:alpine AS builder
 
 RUN set -e \
     && apk upgrade \
