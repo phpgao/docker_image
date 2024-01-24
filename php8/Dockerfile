@@ -1,4 +1,6 @@
-FROM php:8.1-fpm-alpine
+FROM php:8-fpm-alpine
 
 # Install PHP extensions
-RUN docker-php-ext-install pdo_mysql
+RUN apk update && \
+    apk add libpq-dev && \
+    docker-php-ext-install pdo_mysql pdo_pgsql
