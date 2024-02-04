@@ -9,6 +9,13 @@ RUN set -e \
     && xcaddy build ${version} --output /caddy \
         --with github.com/caddy-dns/cloudflare \
         --with github.com/imgk/caddy-trojan
+        --with github.com/caddy-dns/digitalocean
+        --with github.com/caddy-dns/googleclouddns
+        --with github.com/caddy-dns/godaddy
+        --with github.com/caddy-dns/alidns
+        --with github.com/caddy-dns/dnspod
+        --with github.com/caddy-dns/duckdns
+        --with github.com/caddy-dns/tencentcloud
 
 
 FROM alpine AS dist
